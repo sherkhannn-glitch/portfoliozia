@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zia Akhter Shah | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-1;
+background:
+radial-gradient(circle at 20% 20%, rgba(124,58,237,.35), transparent 30%),
+radial-gradient(circle at 80% 30%, rgba(6,182,212,.30), transparent 30%),
+radial-gradient(circle at 50% 80%, rgba(236,72,153,.25), transparent 30%);
+animation:bgmove 15s infinite alternate;
+}
+
+@keyframes bgmove{
+100%{
+transform:scale(1.2) rotate(8deg);
+}
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(20px);
+background:rgba(255,255,255,.05);
+z-index:1000;
+}
+
+.logo{
+font-size:1.3rem;
+font-weight:700;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#06B6D4;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:120px 20px;
+}
+
+.dp{
+width:240px;
+height:240px;
+border-radius:50%;
+overflow:hidden;
+border:5px solid rgba(255,255,255,.15);
+box-shadow:0 0 60px rgba(124,58,237,.8);
+animation:float 4s ease-in-out infinite;
+margin-bottom:30px;
+}
+
+.dp img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+@keyframes float{
+50%{
+transform:translateY(-15px);
+}
+}
+
+.hero h1{
+font-size:4rem;
+font-weight:800;
+background:linear-gradient(90deg,#7C3AED,#06B6D4,#EC4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+margin-top:10px;
+font-size:1.15rem;
+color:#d4d4d4;
+}
+
+.buttons{
+margin-top:30px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.btn{
+padding:14px 30px;
+border-radius:50px;
+text-decoration:none;
+color:white;
+font-weight:600;
+background:linear-gradient(135deg,#7C3AED,#06B6D4);
+transition:.4s;
+}
+
+.btn:hover{
+transform:translateY(-6px) scale(1.05);
+box-shadow:0 0 35px rgba(124,58,237,.7);
+}
+
+section{
+padding:100px 8%;
+}
+
+.glass{
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:25px;
+padding:35px;
+}
+
+h2{
+font-size:2rem;
+margin-bottom:25px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.stat{
+padding:30px;
+text-align:center;
+background:rgba(255,255,255,.05);
+border-radius:20px;
+transition:.4s;
+}
+
+.stat:hover{
+transform:translateY(-10px);
+box-shadow:0 0 35px rgba(124,58,237,.4);
+}
+
+.number{
+font-size:3rem;
+font-weight:800;
+color:#06B6D4;
+}
+.timeline{
+border-left:3px solid #7C3AED;
+padding-left:30px;
+margin-top:20px;
+}
+
+.timeline-item{
+margin-bottom:35px;
+position:relative;
+}
+
+.timeline-item::before{
+content:'';
+position:absolute;
+left:-40px;
+top:5px;
+width:14px;
+height:14px;
+background:#06B6D4;
+border-radius:50%;
+box-shadow:0 0 15px #06B6D4;
+}
+
+.timeline-item h3{
+margin-bottom:8px;
+}
+
+.skills{
+margin-top:20px;
+}
+
+.skill{
+margin-bottom:25px;
+}
+
+.skill-name{
+display:flex;
+justify-content:space-between;
+margin-bottom:8px;
+}
+
+.progress{
+height:12px;
+background:#1a1a1a;
+border-radius:50px;
+overflow:hidden;
+}
+
+.progress-bar{
+height:100%;
+background:linear-gradient(90deg,#7C3AED,#06B6D4);
+border-radius:50px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
+}
+
+.cert-card{
+position:relative;
+overflow:hidden;
+border-radius:20px;
+cursor:pointer;
+background:rgba(255,255,255,.05);
+transition:.4s;
+}
+
+.cert-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 40px rgba(124,58,237,.5);
+}
+
+.cert-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+transition:.5s;
+}
+
+.cert-card:hover img{
+transform:scale(1.08);
+}
+
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+padding:20px;
+background:linear-gradient(
+to top,
+rgba(0,0,0,.9),
+transparent
+);
+}
+
+.overlay h3{
+font-size:1rem;
+}
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+justify-content:center;
+align-items:center;
+z-index:9999;
+padding:20px;
+}
+
+.modal img{
+max-width:90%;
+max-height:90%;
+border-radius:15px;
+}
+
+.close{
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+cursor:pointer;
+color:white;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.contact-card{
+padding:25px;
+border-radius:20px;
+background:rgba(255,255,255,.05);
+transition:.3s;
+}
+
+.contact-card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(124,58,237,.4);
+}
+
+footer{
+padding:50px;
+text-align:center;
+color:#999;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.4rem;
+}
+
+.dp{
+width:180px;
+height:180px;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+ZIA AKHTER SHAH
+</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#certificates">Certificates</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="dp">
+<img src="dp.jpeg" alt="Zia Akhter Shah">
+</div>
+
+<h1>ZIA AKHTER SHAH</h1>
+
+<p>
+Delhi Public School (DPS), Budgam<br>
+Srinagar, Jammu & Kashmir, India
+</p>
+
+<div class="buttons">
+
+<a href="#about" class="btn">
+Explore Portfolio
+</a>
+
+<a href="#certificates" class="btn">
+View Certificates
+</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="glass">
+
+<h2>About Me</h2>
+
+<p>
+I am a dedicated and ambitious student of Delhi Public School, Budgam, with a strong commitment to academic excellence, leadership, and personal growth. Throughout my educational journey, I have actively participated in a wide range of co-curricular and extracurricular activities, including public speaking, leadership programs, strategic campaigns, and academic events.
+<br><br>
+These experiences have helped me develop strong communication, teamwork, critical thinking, and problem-solving abilities. I continuously seek opportunities to expand my knowledge, enhance my skills, and contribute positively to every environment I am a part of.
+<br><br>
+My goal is to pursue higher education in a dynamic academic environment where I can continue developing as a leader, innovator, and responsible global citizen.
+</p>
+
+</div>
+
+</section>
+
+<section id="achievements">
+
+<h2>Achievements</h2>
+
+<div class="stats">
+
+<div class="stat">
+<div class="number">25+</div>
+Certificates
+</div>
+
+<div class="stat">
+<div class="number">15+</div>
+Events
+</div>
+
+<div class="stat">
+<div class="number">5+</div>
+Leadership Roles
+</div>
+
+<div class="stat">
+<div class="number">12th</div>
+Graduate
+</div>
+
+</div>
+
+</section>
+<section>
+
+<div class="glass">
+
+<h2>My Journey</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>2026</h3>
+<p>Successfully completed Class 12 and prepared for higher education opportunities.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Best Delegate Award</h3>
+<p>Recognized for leadership, diplomacy, communication skills, and active participation.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Marketing Strategist</h3>
+<p>Participated in strategic campaigns and received appreciation for creativity and teamwork.</p>
+</div>
+
+<div class="timeline-item">
+<h3>Leadership Activities</h3>
+<p>Actively engaged in public speaking, student initiatives, and extracurricular programs.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<div class="glass">
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<div class="skill">
+<div class="skill-name">
+<span>Leadership</span>
+<span>95%</span>
+</div>
+<div class="progress">
+<div class="progress-bar" style="width:95%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-name">
+<span>Public Speaking</span>
+<span>96%</span>
+</div>
+<div class="progress">
+<div class="progress-bar" style="width:96%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-name">
+<span>Communication</span>
+<span>92%</span>
+</div>
+<div class="progress">
+<div class="progress-bar" style="width:92%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-name">
+<span>Strategic Thinking</span>
+<span>90%</span>
+</div>
+<div class="progress">
+<div class="progress-bar" style="width:90%"></div>
+</div>
+</div>
+
+<div class="skill">
+<div class="skill-name">
+<span>Teamwork</span>
+<span>94%</span>
+</div>
+<div class="progress">
+<div class="progress-bar" style="width:94%"></div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="certificates">
+
+<h2>Certificates & Achievements</h2>
+
+<div class="gallery">
+
+<div class="cert-card" onclick="openModal('ecxel.pdf')">
+
+<iframe src="ecxel.pdf" style="width:100%;height:250px;border:none;pointer-events:none;"></iframe>
+
+<div class="overlay">
+<h3>Certificate of Excellence</h3>
+</div>
+
+</div>
+
+<div class="cert-card" onclick="openModal('del.pdf')">
+
+<iframe src="del.pdf" style="width:100%;height:250px;border:none;pointer-events:none;"></iframe>
+
+<div class="overlay">
+<h3>Best Delegate Award</h3>
+</div>
+
+</div>
+
+<div class="cert-card" onclick="openModal('mar.pdf')">
+
+<iframe src="mar.pdf" style="width:100%;height:250px;border:none;pointer-events:none;"></iframe>
+
+<div class="overlay">
+<h3>Marketing Strategist</h3>
+</div>
+
+</div>
+
+<div class="cert-card" onclick="openModal('lead.pdf')">
+
+<iframe src="lead.pdf" style="width:100%;height:250px;border:none;pointer-events:none;"></iframe>
+
+<div class="overlay">
+<h3>Leadership Program</h3>
+</div>
+
+</div>
+
+<div class="cert-card" onclick="openModal('acad.pdf')">
+
+<iframe src="acad.pdf" style="width:100%;height:250px;border:none;pointer-events:none;"></iframe>
+
+<div class="overlay">
+<h3>Academic Achievement</h3>
+</div>
+
+</div>
+
+<div class="cert-card" onclick="openModal('part.pdf')">
+
+<iframe src="part.pdf" style="width:100%;height:250px;border:none;pointer-events:none;"></iframe>
+
+<div class="overlay">
+<h3>Participation Certificate</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="contact">
+
+<div class="glass">
+
+<h2>Contact Information</h2>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+<h3>🏫 School</h3>
+<p>Delhi Public School (DPS), Budgam</p>
+</div>
+
+<div class="contact-card">
+<h3>📍 Location</h3>
+<p>Srinagar, Jammu & Kashmir, India</p>
+</div>
+
+<div class="contact-card">
+<h3>🎓 Education</h3>
+<p>Class 12 Graduate</p>
+</div>
+
+<div class="contact-card">
+<h3>⭐ Portfolio</h3>
+<p>Leadership • Academics • Public Speaking</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="modal" id="modal">
+
+<span class="close" onclick="closeModal()">
+&times;
+</span>
+
+<img id="modalImg" style="display:none;">
+<iframe id="modalPdf" style="display:none;width:90%;height:90%;border:none;border-radius:15px;"></iframe>
+
+</div>
+
+<footer>
+
+<h3>ZIA AKHTER SHAH</h3>
+
+<p style="margin-top:10px;">
+Delhi Public School (DPS), Budgam
+</p>
+
+<p style="margin-top:10px;">
+Srinagar, Jammu & Kashmir, India
+</p>
+
+<p style="margin-top:20px;color:#777;">
+© 2026 All Rights Reserved
+</p>
+
+</footer>
+
+<script>
+
+function openModal(file){
+
+document.getElementById("modal").style.display="flex";
+
+if(file.endsWith('.pdf')){
+
+document.getElementById("modalImg").style.display="none";
+
+document.getElementById("modalPdf").style.display="block";
+
+document.getElementById("modalPdf").src=file;
+
+}else{
+
+document.getElementById("modalPdf").style.display="none";
+
+document.getElementById("modalImg").style.display="block";
+
+document.getElementById("modalImg").src=file;
+
+}
+
+}
+
+function closeModal(){
+
+document.getElementById("modal").style.display="none";
+
+document.getElementById("modalImg").src="";
+
+document.getElementById("modalPdf").src="";
+
+}
+
+window.onclick=function(event){
+
+const modal=document.getElementById("modal");
+
+if(event.target===modal){
+
+modal.style.display="none";
+
+}
+
+}
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.style.opacity="1";
+
+entry.target.style.transform="translateY(0)";
+
+}
+
+});
+
+});
+
+document.querySelectorAll('.glass,.stat,.cert-card,.contact-card').forEach(el=>{
+
+el.style.opacity="0";
+
+el.style.transform="translateY(40px)";
+
+el.style.transition="all .8s ease";
+
+observer.observe(el);
+
+});
+
+</script>
+
+</body>
+</html>
